@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const projetCtrl = require('./controlers/projets_controleur');
 const adminCtrl = require('./controlers/admin_controleur');
+app.set('port', (process.env.PORT || 8000));
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -21,7 +22,7 @@ let db = BDD.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('connecté à la bdd');
-    app.listen(8000, () => {
+    app.listen(app.use('port'), () => {
         console.log('Listening on 8000');
         projetCtrl(app);
         adminCtrl(app);
