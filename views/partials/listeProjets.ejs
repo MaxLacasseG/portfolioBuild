@@ -1,0 +1,17 @@
+<section class="listeProjets">
+    <nav>
+        <h3 class="catProjets">Web</h3>
+        <ul>
+            <%for(projet of data.projets){%>
+            <li>
+                <a class="navProjet" data-id="<%=projet._id%>" href="#"><%= projet.titre%></a>
+            </li>
+           <%}%>
+        </ul>
+    </nav>
+    <div class="retourAccueil">
+        <div class="logoConteneur">
+            <a href="/"><img src="/img/SVG/logoNomCoul.svg" alt="Retour à la page d'accueil"></a>
+        </div>
+    </div>
+</section>

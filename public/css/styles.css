@@ -1,0 +1,672 @@
+@import 'reset.css';
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Signoria;
+  src: url('../font/Signoria Regular.ttf');
+}
+html {
+  font-size: 62.5%;
+  color: white;
+  background-color: #232427;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Signoria', sans-serif;
+  color: white;
+}
+p,
+input,
+label,
+textarea,
+div,
+li,
+a {
+  font-size: 10px;
+  font-size: 1rem;
+  font-family: 'Signoria', sans-serif;
+}
+h1 {
+  font-size: 70px;
+  font-size: 7rem;
+  font-weight: 500;
+  letter-spacing: -0.15rem;
+  font-family: 'Signoria', sans-serif;
+}
+h2 {
+  font-size: 50px;
+  font-size: 5rem;
+  font-weight: 100;
+}
+h3 {
+  font-size: 30px;
+  font-size: 3rem;
+}
+h4 {
+  font-size: 12.5px;
+  font-size: 1.25rem;
+  text-decoration: underline;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 8px;
+  font-size: 0.8rem;
+}
+h6 {
+  font-size: 7px;
+  font-size: 0.7rem;
+}
+a {
+  text-decoration: none;
+}
+.gabarit,
+.desactive {
+  display: none;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+body .fondAnim {
+  background: radial-gradient(circle at center, rgba(51, 51, 51, 0.8) 0%, rgba(0, 0, 0, 0) 45%), url('../img/bg.png');
+  position: fixed;
+  max-height: 100vh;
+  max-width: 100vw;
+  z-index: -1;
+}
+body .fondAnim * {
+  width: 100vw;
+  height: 100vh;
+}
+body .conteneurPrinc.accueil {
+  background-color: rgba(0, 0, 0, 0.2);
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .conteneurPrinc.accueil header {
+  flex: 1 1 auto;
+  width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .conteneurPrinc.accueil header .logoGroupe {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (min-width: 380px) {
+  body .conteneurPrinc.accueil header .logoGroupe {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+body .conteneurPrinc.accueil header .logoGroupe img {
+  max-height: 30vh;
+}
+@media screen and (min-width: 380px) {
+  body .conteneurPrinc.accueil header .logoGroupe img {
+    max-height: 100%;
+  }
+}
+body .conteneurPrinc.accueil header .logoGroupe h1.logo {
+  font-size: 23px;
+  font-size: 2.3rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+@media screen and (min-width: 380px) {
+  body .conteneurPrinc.accueil header .logoGroupe h1.logo {
+    font-size: 30px;
+    font-size: 3rem;
+  }
+}
+body .conteneurPrinc.accueil header .navPrinc {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .conteneurPrinc.accueil header .navPrinc img {
+  display: none;
+}
+body .conteneurPrinc.accueil header .navPrinc ul {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-around;
+  flex-direction: column;
+}
+@media screen and (min-width: 380px) {
+  body .conteneurPrinc.accueil header .navPrinc ul {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: space-around;
+  }
+}
+body .conteneurPrinc.accueil header .navPrinc ul li {
+  flex: 1 0 100%;
+  margin: 0 0.25em;
+  text-align: center;
+  flex-flow: wrap;
+  margin: 1em;
+}
+@media screen and (min-width: 380px) {
+  body .conteneurPrinc.accueil header .navPrinc ul li {
+    flex-flow: nowrap;
+    flex: 1 1 auto;
+    margin: 0 0.25em;
+    text-align: center;
+  }
+}
+body .conteneurPrinc.accueil header .navPrinc ul li a,
+body .conteneurPrinc.accueil header .navPrinc ul li a:visited,
+body .conteneurPrinc.accueil header .navPrinc ul li a:active {
+  font-size: 20px;
+  font-size: 2rem;
+  transition: all 250ms;
+  color: #808080;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body .conteneurPrinc.accueil header .navPrinc ul li a:hover,
+body .conteneurPrinc.accueil header .navPrinc ul li a:visited:hover,
+body .conteneurPrinc.accueil header .navPrinc ul li a:active:hover {
+  text-shadow: 0 0 4px #e84a1a;
+  color: #E81A1A;
+}
+body .conteneurPrinc.accueil footer p {
+  align-self: flex-end;
+  font-size: 10px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #808080;
+}
+body .conteneurPrinc.projets {
+  background: radial-gradient(circle at center, rgba(51, 51, 51, 0.8) 0%, rgba(0, 0, 0, 0) 45%), url('../img/bg.png');
+  flex: 1 1 100%;
+  display: flex;
+}
+body .conteneurPrinc.projets section.listeProjets {
+  flex: 1 1 15%;
+  min-width: 15vw;
+  max-width: 20vw;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+body .conteneurPrinc.projets section.listeProjets nav {
+  flex: 1 1 80%;
+}
+body .conteneurPrinc.projets section.listeProjets nav .catProjets {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: white;
+  padding-left: 3rem;
+  font-size: 25px;
+  font-size: 2.5rem;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1 1 50%;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0 0.5rem 5rem;
+  flex: 0 1 auto;
+  width: 75%;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li a {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li a,
+body .conteneurPrinc.projets section.listeProjets nav ul li a:visited,
+body .conteneurPrinc.projets section.listeProjets nav ul li a:active {
+  color: #808080;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li a:hover {
+  cursor: pointer;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li.courant {
+  border-bottom: solid 2px #ff9100;
+}
+body .conteneurPrinc.projets section.listeProjets nav ul li.courant a {
+  color: #ff9100;
+}
+body .conteneurPrinc.projets section.listeProjets .retourAccueil {
+  border-top: white solid 3px;
+  width: 20vw;
+}
+body .conteneurPrinc.projets section.listeProjets .retourAccueil .logoConteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 3em;
+}
+body .conteneurPrinc.projets section.listeProjets .retourAccueil .logoConteneur a {
+  flex: 1 1 100%;
+  max-width: 65%;
+}
+body .conteneurPrinc.projets section.projet {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rem;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe {
+  flex: 1 1 60%;
+  display: flex;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe nav.imgGroupe {
+  flex: 1 0 10%;
+  display: flex;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe nav.imgGroupe ul {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe nav.imgGroupe ul li {
+  width: 24px;
+  border-radius: 100%;
+  height: 24px;
+  border: 2px solid #ff0037;
+  margin: 0.5rem;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe nav.imgGroupe ul li.courant {
+  background-color: #ff0037;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe nav.imgGroupe ul li:hover {
+  cursor: pointer;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe .imgConteneur {
+  display: flex;
+  padding: 5rem 3rem 1rem 1rem;
+  align-items: flex-end;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe .imgConteneur img {
+  flex: 1 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 650px;
+  max-height: 500px;
+  object-fit: cover;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside {
+  flex: 1 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside p {
+  font-size: 12.5px;
+  font-size: 1.25rem;
+  color: #808080;
+  padding: 0.5rem;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside p.icone {
+  flex: 1 1 5%;
+  min-width: 20%;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside p:not(.icone) {
+  flex: 1 1 95%;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside a {
+  font-size: 12.5px;
+  font-size: 1.25rem;
+  color: #808080;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside a:hover {
+  text-decoration: underline;
+  color: #ff9100;
+}
+body .conteneurPrinc.projets section.projet div.imgGroupe aside > div {
+  padding: 1em;
+  display: flex;
+  align-items: baseline;
+}
+body .conteneurPrinc.projets section.projet .desc {
+  flex: 1 1 40%;
+  padding-top: 3rem;
+  padding-left: calc(11%);
+  padding-right: calc(30%);
+}
+body .conteneurPrinc.projets section.projet .desc .titre {
+  color: #ff0037;
+  font-size: 40px;
+  font-size: 4rem;
+  margin-bottom: 0.5em;
+}
+body .conteneurPrinc.projets section.projet .desc .descTxt {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: white;
+  text-align: justify;
+}
+body .conteneurPrinc.projets section.projet section {
+  display: none;
+}
+body .conteneurPrinc.projets section.projet section.demarche {
+  display: block;
+}
+body .conteneurPrinc.projets section.projet section p {
+  color: white;
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin: 1em 0;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur {
+  width: 100%;
+  /* Full width */
+  height: 10px;
+  background-color: #808080;
+  /* Grey background */
+  border-radius: 5px;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence {
+  border-radius: 5px;
+  height: 10px;
+  background-color: #ff9100;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='5'] {
+  width: 5%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='10'] {
+  width: 10%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='15'] {
+  width: 15%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='20'] {
+  width: 20%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='25'] {
+  width: 25%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='30'] {
+  width: 30%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='35'] {
+  width: 35%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='40'] {
+  width: 40%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='50'] {
+  width: 50%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='55'] {
+  width: 55%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='60'] {
+  width: 60%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='65'] {
+  width: 65%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='70'] {
+  width: 70%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='75'] {
+  width: 75%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='80'] {
+  width: 80%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='85'] {
+  width: 85%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='90'] {
+  width: 90%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='95'] {
+  width: 95%;
+}
+body .conteneurPrinc.projets section.projet section div.compConteneur div.competence[data-value='100'] {
+  width: 100%;
+}
+body .conteneurPrinc.projets section.projet section.parcoursPro ul li {
+  color: #ff9100;
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin: 2em;
+}
+body .conteneurPrinc.projets section.projet section.contact form {
+  display: flex;
+  flex-direction: column;
+}
+body .conteneurPrinc.projets section.projet section.contact form label {
+  color: white;
+}
+body .conteneurPrinc.projets section.projet section.contact form input {
+  margin-bottom: 1em;
+}
+body .conteneurPrinc.projets section.projet section.contact form input[type="submit"] {
+  align-self: flex-start;
+}
+body .conteneurPrinc.bio {
+  background: radial-gradient(circle at center, rgba(51, 51, 51, 0.8) 0%, rgba(0, 0, 0, 0) 45%), url('../img/bg.png');
+  flex: 1 1 100%;
+  display: flex;
+}
+body .conteneurPrinc.bio section.listeProjets {
+  flex: 1 1 15%;
+  min-width: 15vw;
+  max-width: 20vw;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+body .conteneurPrinc.bio section.listeProjets nav {
+  flex: 1 1 80%;
+}
+body .conteneurPrinc.bio section.listeProjets nav .catProjets {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: white;
+  padding-left: 3rem;
+  font-size: 25px;
+  font-size: 2.5rem;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1 1 50%;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0 0.5rem 5rem;
+  flex: 0 1 auto;
+  width: 75%;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li a {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li a,
+body .conteneurPrinc.bio section.listeProjets nav ul li a:visited,
+body .conteneurPrinc.bio section.listeProjets nav ul li a:active {
+  color: #808080;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li a:hover {
+  cursor: pointer;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li.courant {
+  border-bottom: solid 2px #ff9100;
+}
+body .conteneurPrinc.bio section.listeProjets nav ul li.courant a {
+  color: #ff9100;
+}
+body .conteneurPrinc.bio section.listeProjets .retourAccueil {
+  border-top: white solid 3px;
+  width: 20vw;
+}
+body .conteneurPrinc.bio section.listeProjets .retourAccueil .logoConteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 3em;
+}
+body .conteneurPrinc.bio section.listeProjets .retourAccueil .logoConteneur a {
+  flex: 1 1 100%;
+  max-width: 65%;
+}
+body .conteneurPrinc.bio section.projet {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding-top: 5%;
+  padding-left: calc(11%);
+  padding-right: 25%;
+}
+body .conteneurPrinc.bio section.projet .desc {
+  flex: 1 1 100%;
+}
+body .conteneurPrinc.bio section.projet .desc .titre {
+  color: #ff0037;
+  font-size: 40px;
+  font-size: 4rem;
+}
+body .conteneurPrinc.bio section.projet .desc .descTxt {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.02em;
+  color: white;
+  text-align: justify;
+}
+body .conteneurPrinc.bio section.projet section {
+  display: none;
+}
+body .conteneurPrinc.bio section.projet section.demarche {
+  display: block;
+}
+body .conteneurPrinc.bio section.projet section p {
+  color: white;
+  font-size: 20px;
+  font-size: 2rem;
+  margin: 0.25em 0;
+}
+body .conteneurPrinc.bio section.projet section .divComp {
+  margin: 3em 0;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur {
+  width: 100%;
+  /* Full width */
+  height: 10px;
+  background-color: #808080;
+  /* Grey background */
+  border-radius: 5px;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence {
+  border-radius: 5px;
+  height: 10px;
+  background-color: #ff9100;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='5'] {
+  width: 5%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='10'] {
+  width: 10%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='15'] {
+  width: 15%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='20'] {
+  width: 20%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='25'] {
+  width: 25%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='30'] {
+  width: 30%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='35'] {
+  width: 35%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='40'] {
+  width: 40%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='50'] {
+  width: 50%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='55'] {
+  width: 55%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='60'] {
+  width: 60%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='65'] {
+  width: 65%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='70'] {
+  width: 70%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='75'] {
+  width: 75%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='80'] {
+  width: 80%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='85'] {
+  width: 85%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='90'] {
+  width: 90%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='95'] {
+  width: 95%;
+}
+body .conteneurPrinc.bio section.projet section div.compConteneur div.competence[data-value='100'] {
+  width: 100%;
+}
+body .conteneurPrinc.bio section.projet section.parcoursPro ul li {
+  color: #ff9100;
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin: 2em;
+}
+body .conteneurPrinc.bio section.projet section.contact {
+  flex: 1 1 100%;
+  padding-top: 20%;
+}
+body .conteneurPrinc.bio section.projet section.contact form {
+  display: flex;
+  flex-direction: column;
+}
+body .conteneurPrinc.bio section.projet section.contact form label {
+  color: white;
+}
+body .conteneurPrinc.bio section.projet section.contact form input {
+  margin-bottom: 1em;
+}
+body .conteneurPrinc.bio section.projet section.contact form input[type="submit"] {
+  align-self: flex-start;
+}

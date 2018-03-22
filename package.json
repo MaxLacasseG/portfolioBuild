@@ -1,0 +1,24 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-validator": "^5.0.2",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.5",
+    "nodemailer": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Maxime Lacasse Germain",
+  "license": "ISC"
+}

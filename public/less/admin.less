@@ -1,0 +1,257 @@
+@import 'reset.css';
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Signoria;
+    src: url('../font/Signoria Regular.ttf');
+}
+
+@tablette: ~"screen and (min-width: 380px)";
+@ecran: ~"screen and (min-width: 1024px)";
+@coulBG: #232427;
+@coulBase :white;
+@coulAccent: #ff0037;
+@coulNav2: #ff9100;
+@coulNav: #808080;
+@fontBase: 'Signoria',
+sans-serif;
+@fontAccent: 'Signoria',
+sans-serif;
+@fontTitre: 'Signoria',
+sans-serif;
+.tailleFont(@taille) {
+    @remVal : @taille;
+    @pxVal: (@taille * 10);
+    font-size:~"@{pxVal}px";
+    font-size:~"@{remVal}rem";
+}
+
+//Gestion de la typographie
+html {
+    font-size: 62.5%;
+    color: @coulBase;
+    background-color: @coulBG;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: @fontBase;
+    color: @coulBase;
+}
+
+p,
+input,
+label,
+textarea,
+div,
+li,
+a {
+    .tailleFont(1);
+    font-family: @fontBase;
+}
+
+h1 {
+    .tailleFont(4);
+    font-weight: 500;
+    letter-spacing: -0.15rem;
+    font-family: @fontTitre;
+}
+
+h2 {
+    .tailleFont(3);
+    font-weight: 100;
+}
+
+h3 {
+    .tailleFont(3)
+}
+
+h4 {
+    .tailleFont(1.25);
+    text-decoration: underline;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+h5 {
+    .tailleFont(0.8)
+}
+
+h6 {
+    .tailleFont(0.7)
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    .tailleFont(2);
+}
+
+.gabarit,
+.desactive {
+    display: none;
+}
+
+//Mise en page générale
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .fondAnim {
+        background: radial-gradient(circle at center, rgba(51, 51, 51, 0.8) 0%, rgba(0, 0, 0, 0) 45%), url('../img/bg.png');
+        position: fixed;
+        max-height: 100vh;
+        max-width: 100vw;
+        z-index: -1;
+        & * {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+    & .conteneurPrinc.adminConn {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        & div.formConteneur {
+            width: 40vw;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            & .imgConteneur {
+                min-height: 0;
+                min-width: 0;
+                flex: 1 1 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img {
+                    flex: 1 1 auto;
+                    width: auto;
+                    height: auto;
+                    max-width: 250px;
+                    max-height: 150px;
+                }
+            }
+            & form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & * {
+                    padding: 1em 0;
+                }
+                & input[type='submit'] {
+                    margin-top: 1.5em;
+                }
+                & input[type='text'] {
+                    min-width: 75%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    & .conteneurPrinc.adminProjets {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        & header {
+            flex: 1 1 15%;
+            max-height: 20vh;
+            padding: 2%;
+            display: flex;
+            align-items: center;
+            & h1 {
+                padding-right: 2em;
+            }
+            & ul {
+                display: flex;
+                & li {
+                    display: flex;
+                    margin: 1em 2em;
+                    & a {
+                        &:hover {
+                            text-decoration: underline;
+                            color: @coulAccent;
+                        }
+                    }
+                }
+            }
+        }
+        & div.tableConteneur {
+            display: flex;
+            padding: 2%;
+            flex-direction: column;
+            & table.sectionProjets {
+                width: 100%;
+                margin-top: 2em;
+                border-collapse: collapse;
+                & thead {
+                    width: 100%;
+                    & tr {
+                        width: 100%;
+                        padding: 3em;
+                        & th {
+                            width: 25%;
+                            padding: 2em;
+                            text-transform: uppercase;
+                            .tailleFont(1.5);
+                            & a:hover{
+                                color: @coulNav2;
+                            }
+                        }
+                    }
+                }
+                & tbody {
+                    width: 100%;
+                    & td {
+                        text-align: center;
+                        padding: 2em;
+                        border-right: 1px solid black;
+                        color: black;
+                        .tailleFont(1.5);
+                        font-weight: 400;
+                    }
+                    & tr:nth-child(odd) {
+                        & td{
+                            background: #ccc;
+                            &.mod, &.del{
+                                background: none;
+                                border:none;
+                                .tailleFont(0.8);
+                                & a:hover{
+                                    color: @coulNav2;
+                                }
+                            }
+                        }
+                        
+                    }
+                    & tr:nth-child(even) {
+                        & td{
+                            background: #aaa;
+                            &.mod, &.del{
+                                background: none;
+                                border: none;
+                                .tailleFont(0.8);
+                                & a:hover{
+                                    color: @coulNav2;
+                                }
+                            }
+                        }
+                    }
+                  
+                }
+            }
+        }
+    }
+}
