@@ -22,9 +22,9 @@ let db = BDD.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('connecté à la bdd');
-    app.listen(app.use('port'), () => {
+    app.listen(app.get('port'), () => {
         console.log('Listening on 8000');
-        app.use(projetCtrl(app));
-        app.use(adminCtrl(app));
+        projetCtrl(app);
+        adminCtrl(app);
     });
 });
