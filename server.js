@@ -24,7 +24,7 @@ db.once('open', function () {
     console.log('connecté à la bdd');
     app.listen(app.use('port'), () => {
         console.log('Listening on 8000');
-        projetCtrl(app);
-        adminCtrl(app);
+        app.use(projetCtrl(app));
+        app.use(adminCtrl(app));
     });
 });
